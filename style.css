@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -93,7 +96,7 @@ kbd {
 .user-profile-div {
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin: 10px;
     gap: 8px;
 }
 
@@ -196,4 +199,39 @@ button figure div {
     border-radius: 8px;
 }
 
+.spotify-playlists {
+    padding: 16px;
+}
 
+.spotify-playlists h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.card-container {
+
+}
+
+.card:hover {
+    background-color: #191919;
+}
+
+.card {
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.card img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.card p {
+    padding-top: 8px;
+    color: #b3b3b3;
+    text-overflow: ellipsis;
+}
