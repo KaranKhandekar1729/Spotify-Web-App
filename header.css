@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+button {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+kbd {
+    display: none;
+}
+
+.top-header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0000;
+    padding: 10px 20px;
+    height: 60px;
+}
+
+.top-header img {
+    width: 32px;
+    padding: -8px;
+    margin: 8px;
+}
+
+.home-icon-container {
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+.icon-wrapper {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+    margin-inline-start: 4px;
+}
+
+.search-bar {
+    border-radius: 500px;
+    background-color: #2a2a2a;
+    height: 48px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-bar:hover {
+    background-color: #2a2a2a;
+    border: 1.5px solid#ffff;
+}
+
+.search-area {
+    padding: 12px 48px 12px 64px;
+    color: #b3b3b3;
+}
+
+.browsing-cards-wrapper {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a;
+    margin-inline-end: 8px;
+}
+
+.search-text-container {
+    padding-inline: 8px;
+}
+
+.search-text {
+    padding-inline: 0px 10rem;
+    border-right: .5px solid #b3b3b3;
+}
+
+.user-profile-div {
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+.user-profile-div > a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #ffff;
+}
+
+.download-svg {
+    height: 16px;
+    width: 16px;
+}
+
+.bell-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.premium-button {
+    color: black;
+    border: 1px solid white;
+    border-radius: 500px;
+    background-color: #ffff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    padding-inline: 12px;
+}
+
+.user-button {
+    background-color: #1f1f1f;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+}
+
+button figure div {
+    height: 32px;
+    width: 32px;
+}
+
+.user-button img {
+    border-radius: 50%;
+    object-fit: center;
+    object-position: center center;
+}
