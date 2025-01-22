@@ -20,11 +20,13 @@ kbd {
 }
 
 .top-header {
+    position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: #0000;
-    padding: 10px 20px;
     height: 60px;
+    margin: 2px;
+    padding: 0px;
 }
 
 .top-header img {
@@ -65,7 +67,7 @@ kbd {
 }
 
 .search-area {
-    padding: 12px 48px 12px 64px;
+    padding: 0px 20px 0px 300px;
     color: #b3b3b3;
 }
 
@@ -140,3 +142,58 @@ button figure div {
     object-fit: center;
     object-position: center center;
 }
+
+/* Left */
+
+.container {
+    margin: 0px 10px 0px 10px;
+    gap: 8px;
+}
+
+.left {
+    width: 25vw;
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+.library-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.bi-plus {
+    color: #b3b3b3;
+    font-size: 23px;
+}
+
+.library-tab {
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.library-tab > span {
+    gap: 8px;
+}
+
+.playlist-filter-button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.playlist-filter-button button {
+    background-color: #1f1f1f;
+    border-radius: 9999px;
+    cursor: pointer;
+    padding: 6px 16px;
+    color: white;
+    font-size: 0.875rem;
+}
+
+.right {
+    width: 75vw;
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+
