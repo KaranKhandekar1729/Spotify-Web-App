@@ -38,6 +38,10 @@ kbd {
     margin: 8px;
 }
 
+.logo-container {
+    margin-left: 18px;
+}
+
 .home-icon-container {
     align-items: center;
     justify-content: center;
@@ -155,8 +159,19 @@ button figure div {
 
 .left {
     width: 25vw;
+    max-height: 80vh;
     background-color: #121212;
     border-radius: 8px;
+    overflow: hidden;
+}
+
+.fixed {
+    position: sticky; /* Sticky positioning ensures the div stays in view */
+    top: 0;
+    z-index: 1;
+    background-color: #121212; /* Ensure the background stays visible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    padding-bottom: 10px; /* Add spacing to separate it from the list */
 }
 
 .library-icon {
@@ -175,7 +190,7 @@ button figure div {
     justify-content: space-between;
 }
 
-.library-tab > span {
+.library-tab>span {
     gap: 8px;
 }
 
@@ -184,7 +199,9 @@ button figure div {
     padding: 10px;
 }
 
+
 .playlist-filter-button button {
+    border: none;
     background-color: #1f1f1f;
     border-radius: 9999px;
     cursor: pointer;
@@ -193,10 +210,59 @@ button figure div {
     font-size: 0.875rem;
 }
 
+.song-list {
+    overflow-y: auto;
+    overflow-x: hidden; /* Enable scrolling */
+    max-height: calc(80vh - 120px); /* Adjust for the total height minus fixed content */
+    scrollbar-width: none; /* Firefox: Set scrollbar width to thin */
+    /* scrollbar-color: #b3b3b3 transparent; Firefox: Customize scrollbar color */
+}
+
+.song-list ul li {
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.song-list ul li:hover {
+    background-color: #191919;
+    border-radius: 6px;
+}
+
+.song-list ul li .info {
+    flex-grow: 1;
+}
+
+.song-list ul li .info div{
+    padding: 6px;
+}
+
+.song-list ul li img {
+    width: 15px;
+    margin-left: auto;
+}
+
+.music-icon {
+    font-size: 32px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* right */
+
 .right {
     width: 75vw;
+    max-height: 80vh;
     background-color: #121212;
     border-radius: 8px;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .spotify-playlists {
@@ -207,10 +273,6 @@ button figure div {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 10px;
-}
-
-.card-container {
-
 }
 
 .card:hover {
@@ -234,4 +296,60 @@ button figure div {
     padding-top: 8px;
     color: #b3b3b3;
     text-overflow: ellipsis;
+}
+
+/* bottom music player */
+
+.music-player {
+    height: auto;
+    background-color: #121212;
+    margin: 8px;
+    width: auto;
+    position: sticky;
+    bottom: 0;
+}
+
+.music-player span {
+    gap: 16px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.play-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #ffff;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.previous-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.next-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.seekbar {
+    height: 2px;
+    width: 100%;
+    background: black;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    transition: left .5s;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    bottom: 8px;
+    left: 0%;
 }

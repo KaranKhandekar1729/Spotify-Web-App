@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <div class="nav-bar">
+    <div class="grid">
         <div class="top-header flex">
 
             <!-- logo container -->
@@ -95,17 +97,31 @@
         </div>
         <div class="container flex">
             <div class="left">
-                <div class="library-tab flex">
-                    <span class="flex item-center">
-                        <img src="library.svg" class="library-icon dynamic-invert" alt="playlist library icon">
-                        <span>Your Library</span>
-                    </span>
-                    <span><i class="bi bi-plus"></i></span>
+                <div class="fixed">
+                    <div class="library-tab flex">
+                        <span class="flex item-center">
+                            <img src="library.svg" class="library-icon dynamic-invert" alt="playlist library icon">
+                            <span>Your Library</span>
+                        </span>
+                        <span><i class="bi bi-plus"></i></span>
+                    </div>
+                    <div class="playlist-filter-button">
+                        <button>Playlist</button>
+                        <button>Artists</button>
+                        <button>Albums</button>
+                    </div>
                 </div>
-                <div class="playlist-filter-button">
-                    <button>Playlist</button>
-                    <button>Artists</button>
-                    <button>Albums</button>
+                <div class="song-list item-center justify-center">
+                    <ul>
+                        <!-- <li>
+                            <i class="bi bi-music-note-beamed music-icon"></i>
+                            <div class="info">
+                                <div>song name</div>
+                                <div>song artist</div>
+                            </div>
+                            <img src="play.svg" class="dynamic-invert" alt="play icon">
+                        </li> -->
+                    </ul>
                 </div>
             </div>
             <div class="right">
@@ -190,6 +206,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="music-player">
+            <div class="seekbar">
+                <div class="circle">
+                    
+                </div>
+            </div>
+            <span class="flex item-center justify-center">
+                <img src="previous.svg" class="previous-icon" alt="previous icon">
+                <img src="play.svg" class="play-icon" alt="play icon">
+                <img src="next.svg" class="next-icon" alt="next icon">
+            </span>
         </div>
     </div>
 </body>
