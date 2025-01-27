@@ -7,6 +7,10 @@
     display: flex;
 }
 
+.direction-column {
+    flex-direction: column;
+}
+
 .justify-center {
     justify-content: center;
 }
