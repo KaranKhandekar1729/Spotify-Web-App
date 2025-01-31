@@ -323,6 +323,11 @@ button figure div {
     cursor: pointer;
 }
 
+.song-info {
+    width: 60px;
+    text-overflow: ellipsis;
+}
+
 .play-icon {
     width: 32px;
     height: 30px;
@@ -384,4 +389,14 @@ button figure div {
     position: relative;
     padding: 0 20px;
     width: 40%;
+}
+
+.volume-control {
+    position: absolute;
+    margin-right: auto;
+}
+
+.volume {
+    font-size: 32px;
+    margin-right: auto;
 }

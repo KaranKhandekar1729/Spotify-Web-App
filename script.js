@@ -1,4 +1,5 @@
 let currentSong = new Audio;
+let currFolder;
 
 function formatTime(seconds) {
     // Convert to integer to remove decimals
@@ -11,10 +12,11 @@ function formatTime(seconds) {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
-async function getSongs() {
-    let a = await fetch('http://127.0.0.1:5500/songs/')
+async function getSongs(folder) {
+    currFolder = folder;
+    let a = await fetch(`http://127.0.0.1:5500/${folder}/`)
     let response = await a.text();
-    console.log(response)
+    // console.log(response)
     let div = document.createElement('div')
     div.innerHTML = response;
     let as = div.getElementsByTagName('a')
@@ -24,7 +26,7 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith('.mp3')) {
-            songs.push(element.href.split('/songs/')[1])
+            songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
     return songs
@@ -34,20 +36,20 @@ const playMusic = (track, pause) => {
 
     // let audio = new Audio("/songs/" + track);
     // audio.play();
-    currentSong.src = '/songs/' + track
+    currentSong.src = `http://127.0.0.1:5500/${currFolder}/${track}`;
     if (!pause) {
         currentSong.play()
     }
-    play.src = 'play.svg'
+    play.src = 'pause.svg'
     document.querySelector('.song-info').innerHTML = decodeURI(track)
-    console.log(document.querySelector('.song-info'))
+    // console.log(document.querySelector('.song-info'))
     document.querySelector('.song-time').innerHTML = '0:00/0:00'
 }
 
 async function main() {
     
     // Get the list of all the songs
-    let songs = await getSongs()
+    let songs = await getSongs('/songs/troye')
     playMusic(songs[0], true)
 
     let songUL = document.querySelector(".song-list").getElementsByTagName('ul')[0]
@@ -95,6 +97,27 @@ async function main() {
         let percent = (e.offsetX/e.target.getBoundingClientRect().width) * 100
         document.querySelector('.circle').style.left = percent + '%';
         currentSong.currentTime = ((currentSong.duration) * percent) / 100; 
+    })
+
+    // Add an event listener to previous 
+    previous.addEventListener('click', () =>  { 
+        let index = songs.indexOf(currentSong.src.split('/').slice(-1)[0])
+        if ((index-1) >= 0) {
+            playMusic(songs[index-1])
+        }
+    })
+
+    // Add an event listener to next 
+    next.addEventListener('click', () =>  { 
+        let index = songs.indexOf(currentSong.src.split('/').slice(-1)[0])
+        if ((index+1) > length) {
+            playMusic(songs[index+1])
+        }
+    })
+
+    // Add an event to volume
+    document.querySelector('.range').getElementsByTagName('input')[0].addEventListener('change', (e) => {
+        currentSong.volume = parseInt(e.target.value)/100
     })
 }
 
